@@ -4,6 +4,7 @@ const dbHandler = require("../databaseHandler");
 const router = express.Router();
 router.use(express.static("public"));
 
+// Middleware check login
 const checkLogin = (req, res, next) => {
   if (req.session.user) {
     next();
